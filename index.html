@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Garden Venture 2</title>
+  <!-- Cozy Gaming Font: Fredoka -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="day-theme">
+
+  <div id="game-container">
+
+    <!-- Classic Spiced-Up Title Screen -->
+    <div id="splash-screen" class="splash-screen">
+      <div class="user-id-badge splash-badge">ID: 54596368</div>
+
+      <!-- Tight Stacked Title Logo -->
+      <div class="splash-title-block">
+        <div class="logo-text-stack">
+          <div class="classic-title-garden">GARDEN</div>
+          <div class="classic-title-venture">
+            VENTURE <span class="spiced-two">2</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bottom Soil Loading Bar -->
+      <div class="splash-bottom-bar">
+        <div class="splash-progress-track">
+          <div id="splash-progress-fill" class="splash-progress-fill"></div>
+        </div>
+        <div id="splash-prompt" class="splash-prompt">TIP: Tap to Play Cozy Audio!</div>
+      </div>
+    </div>
+    
+    <!-- Top HUD Header -->
+    <header class="hud-panel">
+      <div class="user-id-badge">ID: 54596368</div>
+      
+      <div class="currency-display">
+        <span class="currency-icon">💰</span>
+        <span id="cash-amount">$25</span>
+      </div>
+
+      <div class="action-buttons-row">
+        <button id="shovel-btn" class="btn btn-shovel">
+          ⛏️ Shovel
+        </button>
+        <button id="sell-btn" class="btn btn-sell">
+          🤠 Sell All
+        </button>
+        <button id="shop-btn" class="btn btn-shop">
+          🛒 Shop
+        </button>
+      </div>
+
+      <button id="settings-btn" class="btn btn-settings">
+        ⚙️ Settings
+      </button>
+    </header>
+
+    <!-- Cycle & Status Banner -->
+    <section class="status-banner">
+      <div class="cycle-status">
+        <div class="sky-arc-container">
+          <span id="cycle-icon" class="celestial-icon">☀️</span>
+        </div>
+        <div class="cycle-info">
+          <span id="cycle-label">Day Time</span>
+          <span id="cycle-timer">0:30</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Field Navigation -->
+    <nav class="field-nav">
+      <button id="prev-field-btn" class="nav-btn">◀ Prev</button>
+      <div class="field-title" id="field-title">Field 1 / 5</div>
+      <button id="next-field-btn" class="nav-btn">Next ▶</button>
+    </nav>
+
+    <!-- Top-Down Farm Yard Environment -->
+    <main class="farm-yard-container">
+      
+      <!-- Night Fireflies Ambient Layer -->
+      <div id="fireflies-layer" class="fireflies-layer"></div>
+
+      <!-- Animated CSS Swaying Grass Meadow -->
+      <div class="swaying-grass-layer">
+        <div class="grass-patch p1"><div class="blade b1"></div><div class="blade b2"></div><div class="blade b3"></div></div>
+        <div class="grass-patch p2"><div class="blade b2"></div><div class="blade b1"></div><div class="blade b3"></div></div>
+        <div class="grass-patch p3"><div class="blade b3"></div><div class="blade b2"></div><div class="blade b1"></div></div>
+        <div class="grass-patch p4"><div class="blade b1"></div><div class="blade b3"></div><div class="blade b2"></div></div>
+        
+        <div class="grass-patch p5"><div class="blade b2"></div><div class="blade b1"></div><div class="blade b3"></div></div>
+        <div class="grass-patch p6"><div class="blade b1"></div><div class="blade b3"></div><div class="blade b2"></div></div>
+        <div class="grass-patch p7"><div class="blade b3"></div><div class="blade b2"></div><div class="blade b1"></div></div>
+
+        <div class="grass-patch p8"><div class="blade b1"></div><div class="blade b3"></div><div class="blade b2"></div></div>
+        <div class="grass-patch p9"><div class="blade b3"></div><div class="blade b1"></div><div class="blade b2"></div></div>
+        <div class="grass-patch p10"><div class="blade b2"></div><div class="blade b3"></div><div class="blade b1"></div></div>
+
+        <div class="grass-patch p11"><div class="blade b1"></div><div class="blade b2"></div><div class="blade b3"></div></div>
+        <div class="grass-patch p12"><div class="blade b3"></div><div class="blade b1"></div><div class="blade b2"></div></div>
+        <div class="grass-patch p13"><div class="blade b2"></div><div class="blade b3"></div><div class="blade b1"></div></div>
+        <div class="grass-patch p14"><div class="blade b1"></div><div class="blade b2"></div><div class="blade b3"></div></div>
+
+        <div class="flower f1"></div>
+        <div class="flower f2"></div>
+        <div class="flower f3"></div>
+        <div class="flower f4"></div>
+      </div>
+
+      <!-- Pure CSS Wooden Fence Enclosure -->
+      <div class="wooden-fence-structure">
+        <div class="fence-post corner-top-left"><div class="post-cap"></div></div>
+        <div class="fence-post corner-top-right"><div class="post-cap"></div></div>
+        <div class="fence-post corner-bottom-left"><div class="post-cap"></div></div>
+        <div class="fence-post corner-bottom-right"><div class="post-cap"></div></div>
+
+        <div class="fence-rail rail-top"></div>
+        <div class="fence-rail rail-bottom"></div>
+        <div class="fence-rail rail-left"></div>
+        <div class="fence-rail rail-right"></div>
+
+        <!-- Inner Tilled Dirt Garden Bed -->
+        <div class="tilled-garden-bed">
+          <div class="grid-container" id="plots-grid">
+            <!-- 9 Plots rendered dynamically by game.js -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Floating Particles Layer -->
+    <div id="particles-layer"></div>
+
+    <!-- Bottom Action Bar -->
+    <footer class="bottom-action-bar">
+      <div class="seed-bag-container">
+        <button id="seed-bag-btn" class="seed-bag-btn">
+          🌱 <span id="current-seed-name">Select Active Seed</span>
+        </button>
+      </div>
+
+      <div class="bottom-right-actions">
+        <button class="icon-circle-btn gear-btn" id="shop-quick-btn" title="Quick Shop">
+          ⚙️
+        </button>
+      </div>
+    </footer>
+
+    <!-- Seed Selection Drawer -->
+    <div id="seed-bag-drawer" class="seed-drawer hidden">
+      <div class="drawer-header">
+        <span>🎒 Select Active Seed</span>
+        <button id="close-drawer-btn" class="close-x">&times;</button>
+      </div>
+      <div id="seed-inventory-list" class="seed-inventory-grid">
+        <!-- Unlocked seeds populated by game.js -->
+      </div>
+    </div>
+
+    <!-- Seed Shop Manifest Modal -->
+    <div id="shop-modal" class="modal hidden">
+      <div class="modal-content shop-manifest-card">
+        <div class="shop-header-row">
+          <div class="shop-title-group">
+            <h2>Seed Shop Manifest</h2>
+            <div class="refill-timer-badge">
+              Refill: <span id="shop-refill-timer">3:00</span>
+            </div>
+          </div>
+          <button id="open-index-btn" class="btn btn-index">
+            📖 Index
+          </button>
+        </div>
+
+        <div id="shop-items-list" class="shop-manifest-list">
+          <!-- Catalog rendered dynamically by game.js -->
+        </div>
+
+        <button id="close-shop-btn" class="btn btn-close-modal">
+          Close Shop
+        </button>
+      </div>
+    </div>
+
+    <!-- 🍇 Vine Harvest Modal (For Permanent Vine Produce) -->
+    <div id="vine-modal" class="modal hidden">
+      <div class="modal-content vine-card">
+        <h2 id="vine-modal-title">🍇 Vine Harvest</h2>
+        <p class="codex-subtitle">Harvest individual fruits hanging on this permanent vine!</p>
+        
+        <div id="vine-produce-list" class="vine-produce-grid">
+          <!-- Produce items rendered by game.js -->
+        </div>
+
+        <button id="harvest-all-vine-btn" class="btn btn-sell" style="margin-bottom: 8px;">
+          🤠 Harvest All Vine Produce
+        </button>
+        <button id="close-vine-btn" class="btn btn-close-modal">
+          Close Vine Menu
+        </button>
+      </div>
+    </div>
+
+    <!-- 📖 Index Modal -->
+    <div id="index-modal" class="modal hidden">
+      <div class="modal-content codex-card">
+        <h2>📖 Plant Codex Index</h2>
+        <p class="codex-subtitle">Track your discovered garden crops!</p>
+        
+        <div id="index-items-list" class="codex-grid">
+          <!-- Codex cards rendered by game.js -->
+        </div>
+
+        <button id="close-index-btn" class="btn btn-close-modal">
+          Close Index
+        </button>
+      </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal hidden">
+      <div class="modal-content settings-card">
+        <h2>⚙️ Garden Settings</h2>
+        
+        <div class="stats-summary" id="stats-summary">
+          <!-- Stats rendered by game.js -->
+        </div>
+
+        <button id="reset-save-btn" class="btn btn-danger">
+          ⚠️ Reset Save Data
+        </button>
+
+        <button id="close-settings-btn" class="btn btn-close-modal">
+          Close Settings
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
